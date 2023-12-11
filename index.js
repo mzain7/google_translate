@@ -9,7 +9,7 @@ const router = express.Router();
 app.use(express.json());
 
 router.get("/translate", async (req, res) => {
-  const { text, to, from } = req.query;
+  const { text, to } = req.body;
   // console.log(text, to, from);
   const result = await translate(text, {
     to,
