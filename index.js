@@ -8,11 +8,11 @@ const router = express.Router();
 
 app.use(express.json());
 
-router.get("/translate", async (req, res) => {
-  const { text, to } = req.body;
+router.post("/translate", async (req, res) => {
+  const { text, lang } = req.body;
   // console.log(text, to, from);
   const result = await translate(text, {
-    to,
+    to: lang,
     from: "en",
     fetchOptions: { agent },
   });
