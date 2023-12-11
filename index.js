@@ -1,6 +1,5 @@
-
-const translate = require('@iamtraction/google-translate');
-const express = require('express');
+const translate = require("@iamtraction/google-translate");
+const express = require("express");
 
 const app = express();
 const router = express.Router();
@@ -8,13 +7,17 @@ const router = express.Router();
 app.use(express.json());
 
 router.post("/translate", async (req, res) => {
-  const { text, lang } = req.body;
-  console.log(text, lang);
-  const result = await translate(text, {
-    to: lang,
-    from: "en",
-  });
-  res.json(result.text).status(200);
+  try {
+    const { text, lang } = req.body;
+    console.log(text, lang);
+    const result = await translate(text, {
+      to: lang,
+      from: "en",
+    });
+    res.json(result.text).status(200);
+  } catch (err) {
+    res.json(err).status(500);
+  }
 });
 
 app.use("/api", router);
