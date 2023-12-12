@@ -1,28 +1,44 @@
 const translate = require("@iamtraction/google-translate");
 const express = require("express");
-const { parse, stringify } = require("srt-to-json");
-
 const app = express();
 const router = express.Router();
 
 app.use(express.json());
 
+
+function convertSrtToJson(srtData) {
+  return srtData
+    .split('\n\n')
+    .map((subtitle) => {
+      const lines = subtitle.split('\n');
+      const index = lines[0];
+      const time = lines[1];
+      const text = lines.slice(2).join('\n');
+      return { index, time, text };
+    })
+    .filter((subtitle) => subtitle.index && subtitle.time && subtitle.text);
+}
+
+function convertJsonToSrt(jsonSubtitle) {
+  return jsonSubtitle
+    .map((subtitle) => `${subtitle.index}\n${subtitle.time}\n${subtitle.text}`)
+    .join('\n\n');
+}
+
 router.post("/translate", async (req, res) => {
   try {
     const { text, lang } = req.body;
-    console.log(text, lang);
-    const srtData = parse(text);
-    console.log(srtData);
+    const srtData =  convertSrtToJson(text);
     for (const entry of srtData) {
       const result = await translate(entry.text, {
         to: lang,
         from: "en",
       });
       entry.text = result.text;
-      console.log(result.text);
     }
-    res.json(stringify(srtData)).status(200);
+    res.json(convertJsonToSrt(srtData)).status(200);
   } catch (err) {
+    console.log(err);
     res.json(err).status(500);
   }
 });
