@@ -10,13 +10,16 @@ app.use(express.json());
 router.post("/translate", async (req, res) => {
   try {
     const { text, lang } = req.body;
+    console.log(text, lang);
     const srtData = parse(text);
+    console.log(srtData);
     for (const entry of srtData) {
       const result = await translate(entry.text, {
         to: lang,
         from: "en",
       });
       entry.text = result.text;
+      console.log(result.text);
     }
     res.json(stringify(srtData)).status(200);
   } catch (err) {
