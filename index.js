@@ -2,7 +2,7 @@ const translate = require("@iamtraction/google-translate");
 const express = require("express");
 const app = express();
 const router = express.Router();
-const languages = require("./languages.json");
+const languages = require("./lang.json");
 
 app.use(express.json());
 
