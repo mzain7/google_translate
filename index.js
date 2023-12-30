@@ -34,8 +34,10 @@ router.post("/translate", async (req, res) => {
     if (!languages.includes(lang)) {
       throw new Error("invalid language");
     }
-    const language = languages.find((language) => language['language'] === lang)['code'];
-    
+    const language = languages.find(
+      (language) => language["language"] === lang
+    )["code"];
+
     const srtData = convertSrtToJson(text);
 
     for (const entry of srtData) {
@@ -80,6 +82,12 @@ router.get("/ad_settings", (req, res) => {
     videoAdmob: true,
     videoAdUnit: "ca-app-pub-3940256099942544/5224354917",
     redirect: false,
+  });
+});
+
+router.get("/ad_settings", (req, res) => {
+  res.status(200).json({
+    test: "testing!",
   });
 });
 
