@@ -2,6 +2,7 @@ const translate = require("@iamtraction/google-translate");
 const express = require("express");
 const app = express();
 const router = express.Router();
+const languages = require("./languages.json");
 
 app.use(express.json());
 
@@ -27,10 +28,19 @@ function convertJsonToSrt(jsonSubtitle) {
 router.post("/translate", async (req, res) => {
   try {
     const { text, lang } = req.body;
+    if (!text || !lang) {
+      throw new Error("text and lang are required");
+    }
+    if (!languages.includes(lang)) {
+      throw new Error("invalid language");
+    }
+    const language = languages.find((language) => language['language'] === lang)['code'];
+    
     const srtData = convertSrtToJson(text);
+
     for (const entry of srtData) {
       const result = await translate(entry.text, {
-        to: lang,
+        to: language,
         from: "en",
       });
       entry.text = result.text;
