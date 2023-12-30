@@ -70,7 +70,7 @@ router.get("/ad_settings", (req, res) => {
     nativeAdmob: true,
     native_adUnit2: "ca-app-pub-3940256099942544/2247696110",
     nativeAdmob2: false,
-    banner_adUnit: "668fa7d7ef8a8246",
+    banner_adUnit: "ca-app-pub-3940256099942544/668fa7d7ef8a8246",
     bannerAdmob: false,
     video_adUnit: "668fa7d7ef8a8246",
     videoAdmob: false,
