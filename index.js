@@ -48,7 +48,7 @@ router.post("/translate", async (req, res) => {
 
 router.get("/ad_settings", (req, res) => {
   res.status(200).json({
-    ad_active: false,
+    ad_active: true,
     appOpen_adUnit: "ca-app-pub-3940256099942544/9257395921",
     appOpenAdmob: true,
     interstitial_adUnit: "ca-app-pub-3940256099942544/1033173712",
