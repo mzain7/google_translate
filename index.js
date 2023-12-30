@@ -85,7 +85,7 @@ router.get("/ad_settings", (req, res) => {
   });
 });
 
-router.get("/ad_settings", (req, res) => {
+router.get("/testing", (req, res) => {
   res.status(200).json({
     test: "testing!",
   });
