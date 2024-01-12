@@ -5,7 +5,8 @@
     <h1 align="center">GOOGLE_TRANSLATE</h1>
 </p>
 <p align="center">
-    <em><code>► INSERT-TEXT-HERE</code></em>
+    <em>Error generating text for slogan: Client error '401 Unauthorized' for url 'https://api.openai.com/v1/chat/completions'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401</em>
 </p>
 <p align="center">
 	<img src="https://img.shields.io/github/license/mzain7/google_translate?style=default&color=0080ff" alt="license">
@@ -37,13 +38,15 @@
 
 ##  Overview
 
-<code>► INSERT-TEXT-HERE</code>
+Error generating text for overview: Client error '401 Unauthorized' for url 'https://api.openai.com/v1/chat/completions'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401
 
 ---
 
 ##  Features
 
-<code>► INSERT-TEXT-HERE</code>
+Error generating text for features: Client error '401 Unauthorized' for url 'https://api.openai.com/v1/chat/completions'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401
 
 ---
 
@@ -62,12 +65,16 @@
 
 <details closed><summary>.</summary>
 
-| File                                                                                          | Summary                         |
-| ---                                                                                           | ---                             |
-| [.gitignore](https://github.com/mzain7/google_translate/blob/master/.gitignore)               | <code>► INSERT-TEXT-HERE</code> |
-| [index.js](https://github.com/mzain7/google_translate/blob/master/index.js)                   | <code>► INSERT-TEXT-HERE</code> |
-| [package-lock.json](https://github.com/mzain7/google_translate/blob/master/package-lock.json) | <code>► INSERT-TEXT-HERE</code> |
-| [package.json](https://github.com/mzain7/google_translate/blob/master/package.json)           | <code>► INSERT-TEXT-HERE</code> |
+| File                                                                                          | Summary                                                                                                                                                                                                                    |
+| ---                                                                                           | ---                                                                                                                                                                                                                        |
+| [.gitignore](https://github.com/mzain7/google_translate/blob/master/.gitignore)               | Error generating text for .gitignore: Client error '401 Unauthorized' for url 'https://api.openai.com/v1/chat/completions'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401        |
+| [index.js](https://github.com/mzain7/google_translate/blob/master/index.js)                   | Error generating text for index.js: Client error '401 Unauthorized' for url 'https://api.openai.com/v1/chat/completions'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401          |
+| [package-lock.json](https://github.com/mzain7/google_translate/blob/master/package-lock.json) | Error generating text for package-lock.json: Client error '401 Unauthorized' for url 'https://api.openai.com/v1/chat/completions'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 |
+| [package.json](https://github.com/mzain7/google_translate/blob/master/package.json)           | Error generating text for package.json: Client error '401 Unauthorized' for url 'https://api.openai.com/v1/chat/completions'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401      |
 
 </details>
 
